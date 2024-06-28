@@ -1,18 +1,27 @@
-<button
-    (click)="buscoPersonajes()">
-    Ver Personajes
-</button>
+<div class="search-container">
+  <input 
+    type="text" 
+    [(ngModel)]="searchTerm" 
+    placeholder="Buscar por nombre..." 
+    class="search-input"
+  >
+  <button (click)="buscarPersonajes()" class="search-button">Search</button>
 
-<button
-    (click)="irA(prevPage)"
-    *ngIf="prevPage">
-  Previous
-</button>
-<button
-    (click)="irA(nextPage)">
-  Next
-</button>
+  
+    <button (click)="buscoPersonajes()" class="rm-button">Inicio Personajes</button>
+  
+    <button (click)="irA(prevPage)" *ngIf="prevPage" class="rm-button">Previous</button>
+  
+    <button (click)="irA(nextPage)" class="rm-button">Next</button>
+  
+</div>
 
-<h3 *ngFor="let personaje of listaPersonajes">
+
+<div class="contenedor">
+ <h3 *ngFor="let personaje of listaPersonajes">
     {{personaje.name}}
-</h3>
+    <img [src]="personaje.image" alt="{{ personaje.name }}">
+</h3> 
+</div>
+
+

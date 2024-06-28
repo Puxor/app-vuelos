@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { RickAndMortyService } from '../../services/rick-and-morty.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-rick',
   templateUrl: './rick.component.html',
   styleUrls: ['./rick.component.css']
 })
-
 export class RickComponent implements OnInit {
   listaPersonajes: any[] = [];
   nextPage: string = '';
   prevPage: string = '';
+  searchTerm: string = ''; // Añadido para almacenar el término de búsqueda
+
   constructor(
     private rickService: RickAndMortyService
   ) { }
@@ -30,7 +30,17 @@ export class RickComponent implements OnInit {
   irA(pagina: string) {
     this.rickService.irAPagina(pagina).subscribe(data => {
       this.actualizaPropiedades(data);
-    })
+    });
+  }
+
+  buscarPersonajes() {
+    if (this.searchTerm) {
+      this.rickService.buscarPersonajes(this.searchTerm).subscribe(data => {
+        this.actualizaPropiedades(data);
+      });
+    } else {
+      this.buscoPersonajes();
+    }
   }
 
   actualizaPropiedades(data: any) {

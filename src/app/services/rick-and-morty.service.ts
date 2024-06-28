@@ -20,4 +20,12 @@ export class RickAndMortyService {
     return this.http.get(`${this.apiUrl}${page}`);
   }
 
+
+  personajeImagen(page: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}${Image}`);
+  }
+
+  buscarPersonajes(name: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}?name=${name}`);
+  }
 }
