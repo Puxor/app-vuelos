@@ -5,23 +5,31 @@
     placeholder="Buscar por nombre..." 
     class="search-input"
   >
-  <button (click)="buscarPersonajes()" class="search-button">Search</button>
-
-  
-    <button (click)="buscoPersonajes()" class="rm-button">Inicio Personajes</button>
-  
-    <button (click)="irA(prevPage)" *ngIf="prevPage" class="rm-button">Previous</button>
-  
-    <button (click)="irA(nextPage)" class="rm-button">Next</button>
-  
+  <button (click)="buscarPersonajes()" class="search-button">Buscar</button>
+  <button (click)="buscoPersonajes()" class="rm-button">Inicio</button>
+  <button (click)="irA(prevPage)" *ngIf="prevPage" class="rm-button">Anterior</button>
+  <button (click)="irA(nextPage)" class="rm-button">Siguiente</button>
 </div>
-
 
 <div class="contenedor">
- <h3 *ngFor="let personaje of listaPersonajes">
-    {{personaje.name}}
-    <img [src]="personaje.image" alt="{{ personaje.name }}">
-</h3> 
+  <div *ngFor="let personaje of listaPersonajes" class="personaje" (click)="selectCharacter(personaje)">
+    <div class="personaje-content">
+      <h3>{{ personaje.name }}</h3>
+      <div class="personaje-info">
+        <img 
+          [src]="personaje.image" 
+          alt="{{ personaje.name }}" 
+          class="personaje-image"
+        >
+        <div class="info" *ngIf="selectedCharacter && selectedCharacter.id === personaje.id">
+          <p>Estatus: {{ personaje.status }}</p>
+          <p>Especie: {{ personaje.species }}</p>
+          <p>Ubicacion: {{ personaje.location.name }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
 
 

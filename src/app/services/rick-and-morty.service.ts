@@ -25,6 +25,18 @@ export class RickAndMortyService {
     return this.http.get(`${this.apiUrl}${Image}`);
   }
 
+  estatusPersonajes(status: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}?status=${status}`);
+  }
+
+  locationPersonajes(location: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}${location}`);
+  }
+
+  speciesPersonajes(species: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}${species}`);
+  }
+
   buscarPersonajes(name: string): Observable<any> {
     return this.http.get(`${this.apiUrl}?name=${name}`);
   }

@@ -8,9 +8,10 @@ import { RickAndMortyService } from '../../services/rick-and-morty.service';
 })
 export class RickComponent implements OnInit {
   listaPersonajes: any[] = [];
+  selectedCharacter: any | null = null;
   nextPage: string = '';
   prevPage: string = '';
-  searchTerm: string = ''; // Añadido para almacenar el término de búsqueda
+  searchTerm: string = ''; 
 
   constructor(
     private rickService: RickAndMortyService
@@ -23,7 +24,6 @@ export class RickComponent implements OnInit {
   buscoPersonajes() {
     this.rickService.obtenerPersonajes().subscribe((data) => {
       this.actualizaPropiedades(data);
-      console.log(data);
     });
   }
 
@@ -43,13 +43,17 @@ export class RickComponent implements OnInit {
     }
   }
 
+  selectCharacter(character: any): void {
+    if (this.selectedCharacter === character) {
+      this.selectedCharacter = null; 
+    } else {
+      this.selectedCharacter = character; 
+    }
+  }
+
   actualizaPropiedades(data: any) {
     this.listaPersonajes = data.results;
-    this.nextPage = data.info.next;
-    this.nextPage = '?' + this.nextPage.split('?')[1];
-    if (data.info.prev != null) {
-      this.prevPage = data.info.prev;
-      this.prevPage = '?' + this.prevPage.split('?')[1];
-    }
+    this.nextPage = data.info.next ? '?' + data.info.next.split('?')[1] : '';
+    this.prevPage = data.info.prev ? '?' + data.info.prev.split('?')[1] : '';
   }
 }
