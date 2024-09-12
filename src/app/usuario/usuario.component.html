@@ -1,0 +1,35 @@
+<div class="usuario-container">
+  <h2>Configuración del Usuario</h2>
+
+  <form (ngSubmit)="guardarUsuario()">
+    <!-- Foto de Perfil -->
+    <div>
+      <label for="fotoPerfil">Foto de Perfil:</label>
+      <input type="file" id="fotoPerfil" (change)="onFileChange($event)">
+    </div>
+
+    <!-- Número de Teléfono -->
+    <div>
+      <label for="telefono">Número de Teléfono:</label>
+      <input type="text" id="telefono" [(ngModel)]="telefono" name="telefono">
+    </div>
+
+    <!-- Ubicación -->
+    <div>
+      <label for="pais">País:</label>
+      <input type="text" id="pais" [(ngModel)]="pais" name="pais">
+    </div>
+
+    <div>
+      <label for="ciudad">Ciudad:</label>
+      <input type="text" id="ciudad" [(ngModel)]="ciudad" name="ciudad">
+    </div>
+
+    <div>
+      <label for="direccion">Dirección:</label>
+      <input type="text" id="direccion" [(ngModel)]="direccion" name="direccion">
+    </div>
+
+    <button type="submit">Guardar</button>
+  </form>
+</div>

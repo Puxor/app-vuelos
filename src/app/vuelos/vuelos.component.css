@@ -1,0 +1,48 @@
+.vuelos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.vuelos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ddd;
+}
+
+.vuelos-header h1 {
+  margin: 0;
+}
+
+.usuario-link {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.usuario-link:hover {
+  text-decoration: underline;
+}
+
+.vuelos-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.vuelos-table th, .vuelos-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.vuelos-table th {
+  background-color: #f4f4f4;
+}
+
+.vuelos-table tr:hover {
+  background-color: #f9f9f9;
+}

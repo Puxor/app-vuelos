@@ -1,0 +1,80 @@
+/* Estilo general para el formulario */
+/* Importar la fuente desde Google Fonts (asegúrate de que esté en tu index.html) */
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+
+/* Estilo general del body */
+body {
+  background-color: #ffffff;
+  font-family: 'Dosis', sans-serif;
+}
+
+/* Estilo para el contenedor del encabezado */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilo para la imagen del logo */
+.logo {
+  width: 100px; /* Ajusta el tamaño del logo según sea necesario */
+  margin-bottom: 10px;
+}
+
+/* Estilo para el nombre de la empresa */
+h1 {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 700; /* Ajusta el peso de la fuente según sea necesario */
+  color: #007bff;
+}
+
+/* Estilo para el formulario */
+form {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f4f4f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para los campos de entrada */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* Estilo para las etiquetas */
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Estilo para el botón de registro */
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Dosis', sans-serif; /* Asegúrate de que esta línea esté incluida */
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+  
+  
+  

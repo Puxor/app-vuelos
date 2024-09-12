@@ -1,35 +1,32 @@
-import { NgModule, importProvidersFrom } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
-import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { LibroComponent } from './libro/libro.component';
-import { PadreComponent } from './components/padre/padre.component';
-import { HijoComponent } from './components/hijo/hijo.component';
-import { FormularioComponent } from './components/formulario/formulario.component';
-import { RecibeFormularioComponent } from './components/recibe-formulario/recibe-formulario.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { VuelosComponent } from './vuelos/vuelos.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { AppRoutingModule } from './app-routing.module';
+import { VuelosService } from './services/vuelos.service';
+import { CommonModule } from '@angular/common'; 
 
-import { HttpClientModule} from '@angular/common/http';
-import { RickComponent } from './components/rick/rick.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LibroComponent,
-    PadreComponent,
-    HijoComponent,
-    FormularioComponent,
-    RecibeFormularioComponent,
-    RickComponent,
-    
+    RegisterComponent,
+    LoginComponent,
+    VuelosComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [VuelosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

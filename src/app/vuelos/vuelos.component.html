@@ -1,0 +1,27 @@
+<div class="vuelos-container">
+  <header class="vuelos-header">
+    <h1>Lista de Vuelos</h1>
+    <a routerLink="/usuario" class="usuario-link">Mi Perfil</a>
+  </header>
+  
+  <table class="vuelos-table">
+    <thead>
+      <tr>
+        <th>Vuelo</th>
+        <th>Salida</th>
+        <th>Llegada</th>
+        <th>Duración</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vuelo of vuelos">
+        <td>{{ vuelo.numero }}</td>
+        <td>{{ vuelo.fecha_salida | date:'short' }}</td>
+        <td>{{ vuelo.fecha_llegada | date:'short' }}</td>
+        <td>{{ vuelo.duracion | date:'HH:mm' }}</td>
+        <td>{{ vuelo.precio | currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

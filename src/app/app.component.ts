@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Libro } from '../interfaces/libro';
 
 
 @Component({
